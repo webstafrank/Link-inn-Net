@@ -1,1 +1,1 @@
-A wifi puechase site and a parallel Blog post platform
+A wifi purchase site and a parallel Blog post platform
