@@ -35,3 +35,26 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+require('dotenv').config();
+
+const mongoose = require('mongoose');
+
+// Import dotenv (for local development)
+require('dotenv').config();
+
+// Get the URI from the environment variable
+const mongoURI = process.env.MONGO_URI;
+
+if (!mongoURI) {
+ console.error("MongoDB URI is undefined. Check your environment variables.");
+ process.exit(1); // Stop the app if the URI is not set
+}
+
+// Connect to MongoDB
+mongoose.connect(mongoURI, {
+ useNewUrlParser: true,
+ useUnifiedTopology: true,
+})
+ .then(() => console.log('Connected to MongoDB'))
+ .catch((err) => console.error('Error connecting to MongoDB:', err));
+
