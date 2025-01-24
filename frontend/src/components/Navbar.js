@@ -1,29 +1,28 @@
-// frontend/src/components/Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
 
 const Navbar = () => {
-    return (
-        <nav className="bg-blue-600 p-4">
-            <ul className="flex space-x-6 justify-center">
-                <li>
-                    <Link to="/" className="text-white hover:text-gray-200">
-                        Home
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/packages" className="text-white hover:text-gray-200">
-                        Packages
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/community" className="text-white hover:text-gray-200">
-                        Community
-                    </Link>
-                </li>
-            </ul>
-        </nav>
-    );
+  return (
+    <header className="flex justify-between items-center px-8 py-4 bg-black">
+      <h1 className="text-2xl font-bold">Link inn Net</h1>
+      <nav className="hidden md:flex space-x-6">
+        <a href="#about" className="hover:text-yellow-500">
+          About
+        </a>
+        <a href="#packages" className="hover:text-yellow-500">
+          Packages
+        </a>
+        <a href="#community" className="hover:text-yellow-500">
+          Community Hangout
+        </a>
+        <a
+          href="#contact"
+          className="bg-transparent border border-white rounded-full px-4 py-1 hover:bg-yellow-500 hover:text-black"
+        >
+          CONTACT
+        </a>
+      </nav>
+    </header>
+  );
 };
 
 export default Navbar;
